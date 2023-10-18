@@ -20,7 +20,6 @@ def menu():
 
 def sacar(*, saldo, valor, numero_saques, limite, extrato, limite_saques):
     excedeu_saldo = valor > saldo
-
     excedeu_limite = valor > limite
 
     excedeu_saques = numero_saques >= limite_saques
