@@ -10,6 +10,7 @@ def main():
     lista_de_usuarios = []
     lista_de_contas = []
     numero_conta = 1
+    AGENCIA = "0001"
 
     while True:
         opcao = input(menu())
@@ -38,9 +39,11 @@ def main():
             nome = input("Insira o seu nome completo: ")
             data_nascimento = input("Insira a data de nascimento: ")
             cpf = input("Insira o número do seu CPF (apenas números): ")
-            if validar_cpf(cpf):
-                print("CPF inválido!")
-                continue
+            while not validar_cpf(cpf):
+                print("CPF inválido! Favor inserir um CPF válido.")
+                cpf = input("Insira o número do seu CPF (apenas números): ")
+
+                # continue
             if buscar_cpf(lista_de_usuarios=lista_de_usuarios, cpf=cpf):
                 print("Usuário já está cadastrado!")
                 continue
@@ -66,11 +69,28 @@ def main():
             print(lista_de_usuarios)
 
         elif opcao == "cc":
+            print("\n================ CADASTRO ================")
             numero_cpf = input("Insira o seu número de CPF: ")
+            while not validar_cpf(numero_cpf):
+                print("CPF inválido! Favor inserir um CPF válido.")
+                numero_cpf = input("Insira o número do seu CPF (apenas números): ")
 
-            print(
-                criar_conta_corrente(numero_conta=numero_conta, cpf_usuario=numero_cpf)
-            )
+            if buscar_cpf(lista_de_usuarios=lista_de_usuarios, cpf=numero_cpf):
+                lista_de_contas.append(
+                    criar_conta_corrente(
+                        agencia=AGENCIA,
+                        numero_conta=numero_conta,
+                        cpf_usuario=numero_cpf,
+                    )
+                )
+                numero_conta += 1
+                print("\n======= CADASTRO CONCLUÍDO================")
+
+            else:
+                print("Não possível cadastrar a sua nova conta!")
+
+        elif opcao == "lcc":
+            print(lista_de_contas)
 
         elif opcao == "q":
             break
