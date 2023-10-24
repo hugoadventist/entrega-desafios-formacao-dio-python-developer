@@ -6,7 +6,7 @@ Objetivo Geral para a etapa 01:
 - [x] Separar as funções existentes de saque, depósito e extrato em funções do Python;
 - [x] Criar duas novas funções: cadastrar usuário (cliente) e cadastrar conta bancária;
 - [x] Criar uma função para listar todas as contas.
-- [ ] Criar função para inativar conta.
+- [x] Criar função para inativar conta.
 
 ### Requisitos
 

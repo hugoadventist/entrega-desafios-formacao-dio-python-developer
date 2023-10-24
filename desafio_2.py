@@ -87,10 +87,23 @@ def main():
                 print("\n======= CADASTRO CONCLUÍDO================")
 
             else:
-                print("Não possível cadastrar a sua nova conta!")
+                print("Não possível cadastrar a sua nova conta!. CPF não encontrado!")
 
         elif opcao == "lcc":
             print(lista_de_contas)
+
+        elif opcao == "icc":
+            print("/n=====================================")
+            conta_para_inativar = input(
+                "Entre com o número da conta que deseja inativar: "
+            )
+            if inativar_conta(conta_para_inativar, lista_contas=lista_de_contas):
+                print("A conta foi inativada com sucesso!")
+            else:
+                print(
+                    "Não foi possível realizar a inativação da conta, "
+                    + "favor verificar se inseriu os dados corretamente."
+                )
 
         elif opcao == "q":
             break

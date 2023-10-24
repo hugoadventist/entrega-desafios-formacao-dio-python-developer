@@ -17,3 +17,23 @@ def test_validar_cpf(
     validos,
 ):
     assert True == validar_cpf(validos)
+
+
+@pytest.fixture(
+    params=[
+        [
+            {
+                "Agência": "0001",
+                "Número da conta": "1",
+                "Usuário": "01352430258",
+                "Status": "ativo",
+            }
+        ]
+    ]
+)
+def lista_de_contas(request):
+    return request.param
+
+
+def test_inativar_conta(lista_de_contas):
+    assert True == inativar_conta("1", lista_contas=lista_de_contas)
