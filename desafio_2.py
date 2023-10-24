@@ -38,13 +38,17 @@ def main():
             nome = input("Insira o seu nome completo: ")
             data_nascimento = input("Insira a data de nascimento: ")
             cpf = input("Insira o número do seu CPF (apenas números): ")
+            if validar_cpf(cpf):
+                print("CPF inválido!")
+                continue
             if buscar_cpf(lista_de_usuarios=lista_de_usuarios, cpf=cpf):
                 print("Usuário já está cadastrado!")
                 continue
 
             endereco = input(
                 textwrap.dedent(
-                    """Insira o seu endereço completo no formato: logradouro, nro - bairro - cidade/sigla estado: """
+                    "Insira o seu endereço completo no formato: logradouro,"
+                    + "nro - bairro - cidade/sigla estado: "
                 )
             )
             print("\n======= CADASTRO CONCLUÍDO================")

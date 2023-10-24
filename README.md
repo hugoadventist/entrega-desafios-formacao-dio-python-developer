@@ -15,11 +15,11 @@ Objetivo Geral para a etapa 01:
 - [ ] A função de depósito deve receber os argumentos somente por posição (positional only). Sugestões de argumentos: saldo, valor, extrato. Sugestõe de retorno: saldo e extrato;
 - [ ] A função extrato deve receber os argumentos por nome e posição (keyword and positional only). Argumentos posicionais: saldo; argumentos nomeados: extrato.
 - [ ] Requisitos para a nova função cadastrar usuário:
-  - [ ] Os usuários deverão estar armazenados em uma lista;
-  - [ ] Criar os seguintes campos para cadastro do usuário: nome, CPF, data de nascimento e endereço;
-  - [ ] O endereço é do tipo string com o formato: logradouro, nr - bairro - cidade/sigla estado;
-  - [ ] Deve ser armazenado somente os números do CPF (criar validação);
-  - [ ] Não podemos cadastar 2 usuários com o mesmo CPF (runtime error? ou criar validação?).
+  - [x] Os usuários deverão estar armazenados em uma lista;
+  - [x] Criar os seguintes campos para cadastro do usuário: nome, CPF, data de nascimento e endereço;
+  - [x] O endereço é do tipo string com o formato: logradouro, nr - bairro - cidade/sigla estado;
+  - [x] Deve ser armazenado somente os números do CPF (criar validação);
+  - [ ] Não podemos cadastrar 2 usuários com o mesmo CPF (runtime error? ou criar validação?).
 - [ ] Requisitos para a função criar conta:
   - [ ] O programa deve armanezar contas em uma lista;
   - [ ] A conta deve ser do tipo dict e ter as seguintes chaves: agência, número da conta e usuário;
